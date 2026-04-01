@@ -24,6 +24,8 @@ app_license = "mit"
 # Includes in <head>
 # ------------------
 
+app_include_js = "/assets/output_messenger/js/add_menu_option.js"
+
 # include js, css files in header of desk.html
 # app_include_css = "/assets/output_messenger/css/output_messenger.css"
 # app_include_js = "/assets/output_messenger/js/output_messenger.js"
@@ -41,6 +43,10 @@ app_license = "mit"
 
 # include js in page
 # page_js = {"page" : "public/js/file.js"}
+
+doctype_js = {
+    "Notification" : "public/js/notification.js"
+}
 
 # include js in doctype views
 # doctype_js = {"doctype" : "public/js/doctype.js"}
@@ -78,6 +84,8 @@ app_license = "mit"
 # 	"methods": "output_messenger.utils.jinja_methods",
 # 	"filters": "output_messenger.utils.jinja_filters"
 # }
+
+after_migrate = "output_messenger.migrate.after_migrate"
 
 # Installation
 # ------------
@@ -247,3 +255,6 @@ app_license = "mit"
 # List of apps whose translatable strings should be excluded from this app's translations.
 # ignore_translatable_strings_from = []
 
+extend_doctype_class = {
+    "Notification": ["output_messenger.notification.OutputMessengerNotification"]
+}
