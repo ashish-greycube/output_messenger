@@ -28,6 +28,22 @@ Pre-commit is configured to use the following tools for checking and formatting 
 - prettier
 - pyupgrade
 
+<hr>
+
+### Key Features:
+**i) Notification Integration:** <br>
+     - Added a new channel: Output Messenger in the Notification DocType<br>
+     - Notifications will now be sent via Output Messenger when triggered<br>
+
+**ii) Manual Messaging (All DocTypes)** <br>
+     - Added a menu item: Send Output Messenger   <br>
+     - On click: <br>
+          - Opens a dialog box    <br>
+          - Allows user selection <br>
+          - Sends the current document link via Output Messenger <br>
+
+<hr>
+
 ### License
 
 mit
