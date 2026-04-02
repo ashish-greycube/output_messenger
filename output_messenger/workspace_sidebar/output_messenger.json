@@ -1,0 +1,26 @@
+{
+ "app": "output_messenger",
+ "creation": "2026-03-25 17:18:31.927675",
+ "docstatus": 0,
+ "doctype": "Workspace Sidebar",
+ "idx": 0,
+ "items": [
+  {
+   "child": 0,
+   "collapsible": 1,
+   "indent": 0,
+   "keep_closed": 0,
+   "label": "Output Messenger",
+   "link_to": "Output Messenger",
+   "link_type": "Workspace",
+   "show_arrow": 0,
+   "type": "Link"
+  }
+ ],
+ "modified": "2026-04-01 13:24:31.484344",
+ "modified_by": "Administrator",
+ "name": "Output Messenger",
+ "owner": "Administrator",
+ "standard": 1,
+ "title": "Output Messenger"
+}

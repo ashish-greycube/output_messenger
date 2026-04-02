@@ -1,0 +1,20 @@
+{
+ "app": "output_messenger",
+ "bg_color": "gray",
+ "creation": "2026-03-25 17:18:31.940015",
+ "docstatus": 0,
+ "doctype": "Desktop Icon",
+ "hidden": 0,
+ "icon_type": "Link",
+ "idx": 0,
+ "label": "Output Messenger",
+ "link_to": "Output Messenger",
+ "link_type": "Workspace Sidebar",
+ "modified": "2026-04-01 13:24:23.705452",
+ "modified_by": "Administrator",
+ "name": "Output Messenger",
+ "owner": "Administrator",
+ "restrict_removal": 0,
+ "roles": [],
+ "standard": 1
+}

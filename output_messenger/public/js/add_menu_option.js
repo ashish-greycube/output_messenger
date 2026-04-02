@@ -2,13 +2,24 @@ $(document).on("form-refresh", function (event, frm) {
 
     // console.log("==============refreshhhh!!!============")
     setTimeout(() => {
-        frappe.db.get_single_value("Output Messenger Settings OM", "enable_output_messenger")
-            .then(enabled => {
-                if (enabled) {
+        frappe.call({
+            method: "output_messenger.api.is_output_messenger_enabled",
+            callback: function (r) {
+                if (r.message) {
                     setup_output_messenger(frm)
                 }
-            })
+            }
+        })
     }, 200);
+
+    // setTimeout(() => {
+    //     frappe.db.get_single_value("Output Messenger Settings OM", "enable_output_messenger")
+    //         .then(enabled => {
+    //             if (enabled) {
+    //                 setup_output_messenger(frm)
+    //             }
+    //         })
+    // }, 200);
 })
 
 function setup_output_messenger(frm) {
@@ -72,5 +83,5 @@ function setup_output_messenger(frm) {
         })
 
         dialog.show()
-    }); 
+    });
 }

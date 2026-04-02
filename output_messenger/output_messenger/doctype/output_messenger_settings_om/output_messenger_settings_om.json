@@ -31,6 +31,7 @@
    "fieldtype": "Column Break"
   },
   {
+   "description": "https://support.outputmessenger.com/authentication-api/",
    "fieldname": "api_key",
    "fieldtype": "Data",
    "in_list_view": 1,
@@ -67,7 +68,7 @@
  "index_web_pages_for_search": 1,
  "issingle": 1,
  "links": [],
- "modified": "2026-03-25 13:42:05.564019",
+ "modified": "2026-04-01 13:26:08.783917",
  "modified_by": "Administrator",
  "module": "Output Messenger",
  "name": "Output Messenger Settings OM",

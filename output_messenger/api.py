@@ -25,3 +25,7 @@ def send_output_notification_to_users(recipients_list, notes, doctype, docname):
                 # print("====Output Messenger: sender - {0}, receiver - {1} ".format(sender_id, recipient_id))
 
         frappe.msgprint(_("Message Sent to {0} Recipient On Output Messenger").format(len(recipients_list)))
+
+@frappe.whitelist()
+def is_output_messenger_enabled():
+    return frappe.db.get_single_value("Output Messenger Settings OM", "enable_output_messenger")
