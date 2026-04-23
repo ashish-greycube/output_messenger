@@ -38,7 +38,7 @@ def send_to_output_messenger(sender_id, target_id, message_text):
 		## Log the response for debugging
 		if response.status_code == 200:
 			response_json = response.json()
-			print(response_json, "===response from Output Messenger API===")
+			# print(response_json, "===response from Output Messenger API===")
 			# if len(response_json) > 0 and not response_json[0].get("success"):
 			# 	log = frappe.log_error(
 			# 		message=response_json, title=_("Output Messenger API Error")
@@ -46,7 +46,7 @@ def send_to_output_messenger(sender_id, target_id, message_text):
 			# 	frappe.msgprint("Error while sending the message {0}".format(get_link_to_form("Error Log", log.name)), alert=True)
 			# 	return {"status": "error", "message": "API returned success status but result is false"}
 			# else:
-			return response.json()
+			return response_json
 		else:
 			log = frappe.log_error(
 				title=_("Output Messenger API Error"),
@@ -54,7 +54,10 @@ def send_to_output_messenger(sender_id, target_id, message_text):
 			)
 			frappe.msgprint("Error while sending the message {0}".format(get_link_to_form("Error Log", log.name)), alert=True)
 			return {"status": "error", "message": f"API returned status {response.status_code}"}
-
+	except requests.exceptions.Timeout:
+		log = frappe.log_error(title="Output Messenger Timeout Error", message="The request to Output Messenger API timed out.")
+		frappe.msgprint("Request timed out while sending the message {0}".format(get_link_to_form("Error Log", log.name)), alert=True)
+		return {"status": "error", "message": "Request timed out"}
 	except:
 		error = frappe.get_traceback()
 		log = frappe.log_error(title="Output Messenger Error", message=error)

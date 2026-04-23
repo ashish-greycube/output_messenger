@@ -11,12 +11,12 @@ def send_output_notification_to_users(recipients_list, notes, doctype, docname):
         frappe.throw(_("Current user does not have an Output Messenger User ID. Please set it in the user profile."))
         
     doc_link = get_url_to_form(doctype, docname)
-    # html_link = '<a href="{doc_link}" target="_blank">{doctype} {docname}</a>'.format(doc_link=doc_link, doctype=doctype, docname=docname)
+    html_link = '<a href="{doc_link}" target="_blank">{doctype} {docname}</a>'.format(doc_link=doc_link, doctype=doctype, docname=docname)
     
     if notes:
-        message_text = notes + " \n\n Above message is related to: \n" + doc_link
+        message_text = notes + " \n\n Above message is related to: \n" + html_link
     else:
-        message_text = "Above message is related to: \n" + doc_link
+        message_text = "Above message is related to: \n" + html_link
 
     recipients_list = json.loads(recipients_list)
     # print("===recipients_list===", recipients_list)
