@@ -38,6 +38,13 @@ def send_to_output_messenger(sender_id, target_id, message_text):
 		## Log the response for debugging
 		if response.status_code == 200:
 			response_json = response.json()
+			frappe.new_doc("Output Messenger Log OM").update({
+				"sender": sender_id,
+				"recipient": target_id,
+				"message": message_text,
+				"response": response_json
+			}).insert(ignore_permissions=True)
+
 			# print(response_json, "===response from Output Messenger API===")
 			# if len(response_json) > 0 and not response_json[0].get("success"):
 			# 	log = frappe.log_error(
