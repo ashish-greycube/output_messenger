@@ -33,7 +33,7 @@ def send_to_output_messenger(sender_id, target_id, message_text):
 		}
 
 		## 3. Execute Request
-		response = requests.post(url, headers=headers, json=data)
+		response = requests.post(url, headers=headers, json=data, timeout=5)
 		
 		## Log the response for debugging
 		if response.status_code == 200:
