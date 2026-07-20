@@ -17,8 +17,9 @@ class OutputMessengerNotification(Notification):
 		# if self.is_standard:
 		# 	self.load_standard_properties(context)
 
+		is_enabled = frappe.db.get_single_value("Output Messenger Settings OM", "enable_output_messenger")
 
-		if self.channel == "Output Messenger":
+		if self.channel == "Output Messenger" and is_enabled:
 			try:
 				# Resolve recipients to Emails/Usernames
 				recipients, cc, bcc = self.get_list_of_recipients(doc, context)
